@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { result -> Log.v("ALBUMS", "" + result) },
+                { result -> Log.v("ALBUMS", "" + result.feed.results) },
                 { error -> Log.e("ERROR", error.message) }
             )
     }

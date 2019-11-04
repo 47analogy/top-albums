@@ -11,7 +11,7 @@ import retrofit2.http.*
 interface AlbumAPI {
 
     @GET("us/apple-music/coming-soon/all/25/explicit.json")
-    fun getAlbums(): Observable<JsonObject>
+    fun getAlbums(): Observable<Album>
 
     companion object {
 
