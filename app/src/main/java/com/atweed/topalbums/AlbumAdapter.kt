@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.card_layout.view.*
 
 
 class AlbumAdapter(
-private val albumList: List<Result>,
-private val listener: (Album) -> Unit
-): RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+    private val albumList: List<Result>,
+    private val listener: (Album) -> Unit
+    ): RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AlbumHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false))
@@ -22,8 +23,9 @@ private val listener: (Album) -> Unit
     class AlbumHolder(albumView: View): RecyclerView.ViewHolder(albumView) {
 
         fun bind(album: Result, listener: (Album) -> Unit) = with(itemView) {
-            title.text = album.artistName
-            body.text = album.artistId
+            name.text = album.name
+            artistName.text = album.artistName
+            Picasso.get().load(album.artworkUrl100).into(albumArtwork)
           //  setOnClickListener { listener() }
         }
     }

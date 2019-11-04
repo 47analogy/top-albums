@@ -14,22 +14,29 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Title"
-            android:textColor="@color/cardview_dark_background"
             android:gravity="center_vertical"
+            android:text="Name"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/body"
-            android:text="Content"
+            android:id="@+id/artistName"
+            android:text="Artist Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/title" />
+            android:layout_below="@+id/name" />
+
+        <ImageView
+            android:id="@+id/albumArtwork"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="5dp"
+            android:layout_below="@+id/artistName"/>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
