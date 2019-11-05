@@ -10,41 +10,36 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical"
-            android:text="@string/name"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/artistName"
-            android:text="@string/artist_name"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/name" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:orientation="vertical">
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/albumArtwork"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:padding="5dp" />
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:contentDescription="@string/album_image" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/albumArtwork"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/albumArtwork"
+            android:layout_below="@+id/name"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"
+            android:text="@string/artist_name" />
 
     </RelativeLayout>
 
