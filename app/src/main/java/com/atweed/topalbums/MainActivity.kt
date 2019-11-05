@@ -1,5 +1,6 @@
 package com.atweed.topalbums
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,23 +36,26 @@ class MainActivity : AppCompatActivity() {
 //                { error -> Log.e("ERROR", error.message) }
 //            )
             .subscribe(
-                { result -> setupRecycler(result.feed.results) },
+                { result -> showRecycler(result.feed.results) },
                 { error -> Log.e("ERROR", error.message) }
             )
     }
 
-    fun setupRecycler(albumList: List<Result>) {
-
+    fun showRecycler(albumList: List<Result>) {
         albums_recycler.setHasFixedSize(true)
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         albums_recycler.layoutManager = layoutManager
         albums_recycler.adapter = AlbumAdapter(albumList){
-            Log.v("Album", it.toString())
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("releaseDate", it.releaseDate)
+            intent.putExtra("rating", it.contentAdvisoryRating)
+            //intent.putExtra("genre", it.genres)
+            intent.putExtra("artistLink", it.artistUrl)
+            intent.putExtra("albumLink", it.url)
+            startActivity(intent)
         }
-
     }
-
 
     override fun onPause() {
         super.onPause()

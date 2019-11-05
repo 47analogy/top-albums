@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.card_layout.view.*
 
 class AlbumAdapter(
     private val albumList: List<Result>,
-    private val listener: (Album) -> Unit
+    private val listener: (Result) -> Unit
     ): RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AlbumHolder(
@@ -22,11 +22,11 @@ class AlbumAdapter(
 
     class AlbumHolder(albumView: View): RecyclerView.ViewHolder(albumView) {
 
-        fun bind(album: Result, listener: (Album) -> Unit) = with(itemView) {
+        fun bind(album: Result, listener: (Result) -> Unit) = with(itemView) {
             name.text = album.name
             artistName.text = album.artistName
             Picasso.get().load(album.artworkUrl100).into(albumArtwork)
-          //  setOnClickListener { listener() }
+            setOnClickListener { listener(album) }
         }
     }
 }

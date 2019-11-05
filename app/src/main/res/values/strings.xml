@@ -2,4 +2,6 @@
     <string name="app_name">Top Albums</string>
     <string name="click_to_display_top_albums">Click to display top albums</string>
     <string name="albums">Albums</string>
+    <string name="name">Name</string>
+    <string name="artist_name">Artist Name</string>
 </resources>

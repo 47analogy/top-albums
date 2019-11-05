@@ -19,24 +19,33 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
-            android:text="Name"
+            android:text="@string/name"
             android:textColor="@color/cardview_dark_background"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/artistName"
-            android:text="Artist Name"
+            android:text="@string/artist_name"
+            android:textSize="18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/name" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
         <ImageView
             android:id="@+id/albumArtwork"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:padding="5dp"
-            android:layout_below="@+id/artistName"/>
+            android:padding="5dp" />
 
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
