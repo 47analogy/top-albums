@@ -27,21 +27,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     // log albums (verifying)
-    fun displayAlbums() {
+    private fun displayAlbums() {
         disposable = client.getAlbums()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(
-//                { result -> Log.v("ALBUMS", "" + result.feed.results) },
-//                { error -> Log.e("ERROR", error.message) }
-//            )
             .subscribe(
                 { result -> showRecycler(result.feed.results) },
                 { error -> Log.e("ERROR", error.message) }
             )
     }
 
-    fun showRecycler(albumList: List<Result>) {
+    private fun showRecycler(albumList: List<Result>) {
         albums_recycler.setHasFixedSize(true)
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL

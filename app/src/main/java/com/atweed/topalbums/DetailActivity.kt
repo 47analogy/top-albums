@@ -13,13 +13,12 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.album_detail_layout)
 
-        // TO-DO: MAKE THIS DRY
-        val strReleaseDate: String = intent.getStringExtra("releaseDate")
-        val strRating: String = intent.getStringExtra("rating")
-        val strGenre: String = intent.getStringExtra("genre")
-        val strArtistLink: String = intent.getStringExtra("artistLink")
-        val strAlbumLink: String = intent.getStringExtra("albumLink")
 
+        val strReleaseDate = intent.getStringExtra("releaseDate")
+        val strRating = intent.getStringExtra("rating")
+        val strGenre = intent.getStringExtra("genre")
+        val strArtistLink = intent.getStringExtra("artistLink")
+        val strAlbumLink = intent.getStringExtra("albumLink")
 
         details_releaseDate.text = strReleaseDate
         details_rating.text = strRating
@@ -28,7 +27,5 @@ class DetailActivity : AppCompatActivity() {
         details_genre.text = extractedGenre.toString()
         details_artistLink.text = strArtistLink
         details_albumLink.text = strAlbumLink
-
-        //details_releaseDate.setText(strReleaseDate) ?? Java way
     }
 }
