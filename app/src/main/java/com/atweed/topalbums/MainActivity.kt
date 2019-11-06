@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val client by lazy {
+    private val client by lazy {
         AlbumAPI.create()
     }
 
@@ -51,10 +51,5 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("albumLink", it.url)
             startActivity(intent)
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        disposable?.dispose()
     }
 }

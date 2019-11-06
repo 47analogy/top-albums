@@ -13,13 +13,14 @@ class AlbumAdapter(
     private val listener: (Result) -> Unit
     ): RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
+    // initialize
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AlbumHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false))
-
+    // pass data
     override fun onBindViewHolder(holder: AlbumHolder, position: Int) = holder.bind(albumList[position], listener)
-
+    // size of the data
     override fun getItemCount() = albumList.size
-
+    // declare the text view content, images, listener to change the values and bind/connect them
     class AlbumHolder(albumView: View): RecyclerView.ViewHolder(albumView) {
 
         fun bind(album: Result, listener: (Result) -> Unit) = with(itemView) {
