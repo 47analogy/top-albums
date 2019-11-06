@@ -28,6 +28,7 @@
             android:layout_toEndOf="@+id/albumArtwork"
             android:padding="5dp"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:text="@string/name" />
 
         <TextView

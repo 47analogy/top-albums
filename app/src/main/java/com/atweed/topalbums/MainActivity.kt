@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("releaseDate", it.releaseDate)
             intent.putExtra("rating", it.contentAdvisoryRating)
-            //intent.putExtra("genre", it.genres)
+            intent.putExtra("genre", it.genres.toString())
             intent.putExtra("artistLink", it.artistUrl)
             intent.putExtra("albumLink", it.url)
             startActivity(intent)
